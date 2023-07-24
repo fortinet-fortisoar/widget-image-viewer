@@ -1,10 +1,9 @@
 {
-    "name": "imageViewerWidget",
-    "title": "Image Viewer Widget",
+    "name": "staticImageViewerWidget",
+    "title": "Static Image Viewer Widget",
     "subTitle": "Upload an image and view on Dashboard",
     "version": "1.0.0",
     "published_date": 1685943889,
-    "releaseNotes": "unavailable",
     "metadata": {
         "description": "This widget enables you to upload any image, eg. png\/jpg\/gif, displays the same image on Dashboard with the given height",
         "pages": [
@@ -14,8 +13,7 @@
         "certified": "No",
         "publisher": "Fortinet",
         "compatibility": [
-            "7.4.1"
+            "7.3.1"
         ]
-    },
-    "development": false
+    }
 }

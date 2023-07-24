@@ -7,18 +7,16 @@
 (function () {
     angular
         .module('cybersponse')
-        .controller('editImageViewerWidget100Ctrl', editImageViewerWidget100Ctrl);
+        .controller('editStaticImageViewerWidget100Ctrl', editStaticImageViewerWidget100Ctrl);
 
-    editImageViewerWidget100Ctrl.$inject = ['$scope', '$uibModalInstance', 'config'];
+    editStaticImageViewerWidget100Ctrl.$inject = ['$scope', '$uibModalInstance', 'config'];
 
-    function editImageViewerWidget100Ctrl($scope, $uibModalInstance, config) {
+    function editStaticImageViewerWidget100Ctrl($scope, $uibModalInstance, config) {
         $scope.cancel = cancel;
         $scope.save = save;
         $scope.config = config;
-        // $scope.config.image = $scope.config.image ? $scope.config.image : '';
         $scope.config.imageBase64 = $scope.config.imageBase64 ? $scope.config.imageBase64 : '';
         $scope.config.imageName = $scope.config.imageName ? $scope.config.imageName : '';
-        // $scope.config.stretchImage = $scope.config.stretchImage ? $scope.config.stretchImage : false;
 
         $scope.$watch('config.image', function (oldValue, newValue) {
             if ($scope.config.image && oldValue !== newValue) {
@@ -36,10 +34,6 @@
                 };
                 reader.readAsDataURL(blob);
             });
-        }
-
-        function changeImage() {
-
         }
 
         function cancel() {

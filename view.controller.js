@@ -7,15 +7,13 @@
     (function () {
         angular
             .module('cybersponse')
-            .controller('imageViewerWidget100Ctrl', imageViewerWidget100Ctrl);
+            .controller('staticImageViewerWidget100Ctrl', staticImageViewerWidget100Ctrl);
 
-        imageViewerWidget100Ctrl.$inject = ['$scope'];
+        staticImageViewerWidget100Ctrl.$inject = ['$scope'];
 
-        function imageViewerWidget100Ctrl($scope) {
+        function staticImageViewerWidget100Ctrl($scope) {
           $scope.config.image = $scope.config.image ? $scope.config.image : '';
           $scope.config.height = $scope.config.height ? $scope.config.height : '300';
           $scope.imageStyle = $scope.config.stretchImage ? "" : "object-fit: cover;";
-
-
         }
     })();
