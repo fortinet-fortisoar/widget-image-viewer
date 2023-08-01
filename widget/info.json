@@ -1,6 +1,6 @@
 {
-    "name": "staticImageViewerWidget",
-    "title": "Static Image Viewer Widget",
+    "name": "staticImageViewer",
+    "title": "Static Image Viewer",
     "subTitle": "Upload an image and view on Dashboard",
     "version": "1.0.0",
     "published_date": 1685943889,

@@ -7,11 +7,11 @@
 (function () {
     angular
         .module('cybersponse')
-        .controller('editStaticImageViewerWidget100Ctrl', editStaticImageViewerWidget100Ctrl);
+        .controller('editStaticImageViewer100Ctrl', editStaticImageViewer100Ctrl);
 
-    editStaticImageViewerWidget100Ctrl.$inject = ['$scope', '$uibModalInstance', 'config'];
+    editStaticImageViewer100Ctrl.$inject = ['$scope', '$uibModalInstance', 'config'];
 
-    function editStaticImageViewerWidget100Ctrl($scope, $uibModalInstance, config) {
+    function editStaticImageViewer100Ctrl($scope, $uibModalInstance, config) {
         $scope.cancel = cancel;
         $scope.save = save;
         $scope.config = config;
