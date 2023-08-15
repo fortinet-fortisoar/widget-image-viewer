@@ -1,0 +1,69 @@
+<!-- Copyright start
+  Copyright (C) 2008 - 2023 Fortinet Inc.
+  All rights reserved.
+  FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
+  Copyright end -->
+<form data-ng-submit="save(resultImage)" class="noMargin" name="editWidgetForm"
+  data-ng-class="{'state-wait': processing }" novalidate>
+  <div class="modal-header">
+    <h3 class="modal-title col-md-9">Image Viewer Edit View</h3>
+    <button type="button" class="close" data-ng-click="cancel()" data-dismiss="modal" aria-label="Close"
+      id="close-edit-widget-form-btn">
+      <div aria-hidden="true" class="version-button">+</div>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group"
+      data-ng-class="{ 'has-error': editGlobalVisibility.title.$invalid && editGlobalVisibility.title.$touched }">
+      <label for="title" class="control-label">Title</label> <input id="title"
+        name="title" type="text" data-ng-model="config.title" class="form-control" />
+      <div data-cs-messages="editGlobalVisibility.title"></div>
+    </div>
+    <hr>
+    <div class="file-upload margin-top-lg" data-ngf-select="validateFile($file)" data-ngf-drop="validateFile($file)"
+      data-ng-model="config.image" data-ng-show="!config.image" data-accept="image/*" data-ngf-pattern="image/*">
+      <h1 class="margin-top-sm">
+        <span class="fa fa-fw fa-2x fa-picture-o"></span>
+      </h1>
+      <h4>Drag and drop an image</h4>
+      <p>or click to use standard uploader</p>
+    </div>
+    <div data-ng-show="config.image" class="font-size-12" style="text-align: center;">
+      <span>
+        {{config.imageName}}
+      </span>
+    </div>
+
+    <button type="button" data-ng-show="config.image" class="icon icon-edit btn btn-link margin-top-sm center-block"
+      data-ng-click="config.image = null; " id="change-profile-image">Change Image</button>
+
+    <div class="form-group">
+      <label for="height" class="control-label">Height</label>        <span
+      data-uib-tooltip="Specify desired height, fir not, 250px will be chosen by default. The height is in 'px'. Minimum and Maximun  heights allowed are 100 and 500 respectively"
+      data-tooltip-append-to-body="true"><i class="icon icon-information font-Size-13"></i></span>
+      <input id="height" name="height" type="number" class="form-control" data-ng-model="config.height" min="100"
+        max="500">
+
+      <span class="text-danger" ng-show="editWidgetForm.height.$invalid">
+        <span ng-show="editWidgetForm.height.$error.min || editWidgetForm.height.$error.max">Height should be in between
+          100 and 500.</span>
+      </span>
+    </div>
+    <div class="checkbox">
+      <label for="stretchImage">
+        <input id="stretchImage" type="checkbox" name="stretchImage" data-ng-model="config.stretchImage">Stretch Image
+      </label>
+      <span
+      data-uib-tooltip="Check this box to stretch the image to fit entire box, according to the height. The widget will stretch width wise, height remaining constant."
+      data-tooltip-append-to-body="true"><i class="icon icon-information font-Size-13"></i></span>
+      <div class="modal-footer">
+    </div>
+    
+  </div>
+
+    <button id="edit-widget-save" type="submit" class="btn btn-sm btn-primary"><i
+        class="icon icon-check margin-right-sm"></i>Save</button>
+    <button id="edit-widget-cancel" type="button" class="btn btn-sm btn-default" data-ng-click="cancel()"><i
+        class="icon icon-close margin-right-sm"></i>Close</button>
+  </div>
+</form>
